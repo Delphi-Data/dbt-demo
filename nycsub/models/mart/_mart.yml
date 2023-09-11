@@ -1,0 +1,227 @@
+version: 2
+
+models:
+  - name: routes
+    description: ""
+    columns:
+      - name: route_id
+        description: ""
+
+      - name: route_short_name
+        description: ""
+
+      - name: route_long_name
+        description: ""
+
+      - name: route_describe
+        description: ""
+
+      - name: route_type
+        description: ""
+
+  - name: stations
+    description: ""
+    columns:
+      - name: station_id
+        description: ""
+
+      - name: complex_id
+        description: ""
+
+      - name: gtfs_stop_id
+        description: ""
+
+      - name: division
+        description: ""
+
+      - name: line
+        description: ""
+
+      - name: station_name
+        description: ""
+
+      - name: borough_name
+        description: ""
+
+      - name: daytime_routes
+        description: ""
+
+      - name: structure
+        description: ""
+
+      - name: north_direction_label
+        description: ""
+
+      - name: south_direction_label
+        description: ""
+
+      - name: station_lat
+        description: ""
+
+      - name: station_lon
+        description: ""
+
+      - name: station_geom
+        description: ""
+
+  - name: trips
+    description: ""
+    columns:
+      - name: route_id
+        description: ""
+
+      - name: service_id
+        description: ""
+
+      - name: trip_id
+        description: ""
+
+      - name: trip_headsign
+        description: ""
+
+      - name: direction_id
+        description: ""
+
+      - name: block_id
+        description: ""
+
+      - name: shape_id
+        description: ""
+
+  - name: stop_times
+    description: ""
+    columns:
+      - name: trip_id
+        description: ""
+
+      - name: arrival_time
+        description: ""
+
+      - name: departure_time
+        description: ""
+
+      - name: stop_id
+        description: ""
+
+      - name: stop_sequence
+        description: ""
+
+      - name: stop_headsign
+        description: ""
+
+      - name: pickup_type
+        description: ""
+
+      - name: dropoff_type
+        description: ""
+
+      - name: shape_dist_traveled
+        description: ""
+
+  - name: station_entrances
+    description: ""
+    columns:
+      - name: division
+        description: ""
+
+      - name: line
+        description: ""
+
+      - name: station_name
+        description: ""
+
+      - name: station_lat
+        description: ""
+
+      - name: station_lon
+        description: ""
+
+      - name: route_1
+        description: ""
+
+      - name: route_2
+        description: ""
+
+      - name: route_3
+        description: ""
+
+      - name: route_4
+        description: ""
+
+      - name: route_5
+        description: ""
+
+      - name: route_6
+        description: ""
+
+      - name: route_7
+        description: ""
+
+      - name: route_8
+        description: ""
+
+      - name: route_9
+        description: ""
+
+      - name: route_10
+        description: ""
+
+      - name: route_11
+        description: ""
+
+      - name: entrance_type
+        description: ""
+
+      - name: staff
+        description: ""
+
+      - name: staff_hours
+        description: ""
+
+      - name: ada_notes
+        description: ""
+
+      - name: free_crossover
+        description: ""
+
+      - name: north_south_street
+        description: ""
+
+      - name: east_west_street
+        description: ""
+
+      - name: corner
+        description: ""
+
+      - name: entrance_lat
+        description: ""
+
+      - name: entrance_lon
+        description: ""
+
+      - name: entry
+        description: ""
+
+      - name: exit_only
+        description: ""
+
+      - name: vending
+        description: ""
+
+      - name: ada_compliant
+        description: ""
+
+      - name: station_geom
+        description: ""
+
+      - name: entrance_geom
+        description: ""
+
+  - name: station_complexes
+    description: ""
+    columns:
+      - name: complex_id
+        description: ""
+
+      - name: complex_name
+        description: ""
