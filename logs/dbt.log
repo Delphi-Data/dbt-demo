@@ -1,0 +1,35 @@
+[0m13:40:52.402811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049f4510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049dde50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049de450>]}
+
+
+============================== 13:40:52.407298 | 7b202bec-618e-47b3-971d-92765ccd450c ==============================
+[0m13:40:52.407298 [info ] [MainThread]: Running with dbt=1.5.2
+[0m13:40:52.407597 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': '/Users/david/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m13:41:24.190342 [debug] [MainThread]: Starter project path: /opt/homebrew/lib/python3.11/site-packages/dbt/include/starter_project
+[0m13:42:16.511976 [error] [MainThread]: Encountered an error:
+
+[0m13:42:16.516190 [error] [MainThread]: Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/dbt/cli/requires.py", line 86, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/dbt/cli/requires.py", line 71, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/dbt/cli/main.py", line 457, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/dbt/task/init.py", line 306, in run
+    adapter = self.ask_for_adapter_choice()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/dbt/task/init.py", line 230, in ask_for_adapter_choice
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/click/termui.py", line 166, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/click/termui.py", line 149, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m13:42:16.517514 [debug] [MainThread]: Command `dbt init` failed at 13:42:16.517266 after 84.13 seconds
+[0m13:42:16.518071 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049de090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049996d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1011a6590>]}
+[0m13:42:16.518532 [debug] [MainThread]: Flushing usage events
