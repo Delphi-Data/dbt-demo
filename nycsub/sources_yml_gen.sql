@@ -1,8 +1,7 @@
 {{ codegen.generate_source(
-    schema_name='new_york_subway',
+    schema_name='austin_bikeshare',
     generate_columns=true,
     include_descriptions=true,
     include_data_types=true,
-    name='nycsub_public',
-    exclude='subway_ridership_2013_present',
+    name='austin_bike',
     include_schema=true) }}

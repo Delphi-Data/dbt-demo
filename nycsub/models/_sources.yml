@@ -1,256 +1,86 @@
 version: 2
 
 sources:
-  - name: nycsub_public
+  - name: austin_bike
     description: ""
-    schema: new_york_subway
+    schema: austin_bikeshare
     tables:
-      - name: geo_nyc_borough_boundaries
-        description: ""
-        columns:
-          - name: borough_code
-            data_type: STRING
-            description: ""
-          - name: borough_name
-            data_type: STRING
-            description: ""
-          - name: borough_area
-            data_type: FLOAT64
-            description: ""
-          - name: borough_len
-            data_type: FLOAT64
-            description: ""
-          - name: borough_geom
-            data_type: GEOGRAPHY
-            description: ""
-
-      - name: routes
-        description: ""
-        columns:
-          - name: route_id
-            data_type: STRING
-            description: ""
-          - name: route_short_name
-            data_type: STRING
-            description: ""
-          - name: route_long_name
-            data_type: STRING
-            description: ""
-          - name: route_describe
-            data_type: STRING
-            description: ""
-          - name: route_type
-            data_type: STRING
-            description: ""
-
-      - name: station_complexes
-        description: ""
-        columns:
-          - name: complex_id
-            data_type: STRING
-            description: ""
-          - name: complex_name
-            data_type: STRING
-            description: ""
-
-      - name: station_entrances
-        description: ""
-        columns:
-          - name: division
-            data_type: STRING
-            description: ""
-          - name: line
-            data_type: STRING
-            description: ""
-          - name: station_name
-            data_type: STRING
-            description: ""
-          - name: station_lat
-            data_type: FLOAT64
-            description: ""
-          - name: station_lon
-            data_type: FLOAT64
-            description: ""
-          - name: route_1
-            data_type: STRING
-            description: ""
-          - name: route_2
-            data_type: STRING
-            description: ""
-          - name: route_3
-            data_type: STRING
-            description: ""
-          - name: route_4
-            data_type: STRING
-            description: ""
-          - name: route_5
-            data_type: STRING
-            description: ""
-          - name: route_6
-            data_type: STRING
-            description: ""
-          - name: route_7
-            data_type: STRING
-            description: ""
-          - name: route_8
-            data_type: STRING
-            description: ""
-          - name: route_9
-            data_type: STRING
-            description: ""
-          - name: route_10
-            data_type: STRING
-            description: ""
-          - name: route_11
-            data_type: STRING
-            description: ""
-          - name: entrance_type
-            data_type: STRING
-            description: ""
-          - name: staff
-            data_type: STRING
-            description: ""
-          - name: staff_hours
-            data_type: STRING
-            description: ""
-          - name: ada_notes
-            data_type: STRING
-            description: ""
-          - name: free_crossover
-            data_type: BOOLEAN
-            description: ""
-          - name: north_south_street
-            data_type: STRING
-            description: ""
-          - name: east_west_street
-            data_type: STRING
-            description: ""
-          - name: corner
-            data_type: STRING
-            description: ""
-          - name: entrance_lat
-            data_type: FLOAT64
-            description: ""
-          - name: entrance_lon
-            data_type: FLOAT64
-            description: ""
-          - name: entry
-            data_type: BOOLEAN
-            description: ""
-          - name: exit_only
-            data_type: BOOLEAN
-            description: ""
-          - name: vending
-            data_type: BOOLEAN
-            description: ""
-          - name: ada_compliant
-            data_type: BOOLEAN
-            description: ""
-          - name: station_geom
-            data_type: GEOGRAPHY
-            description: ""
-          - name: entrance_geom
-            data_type: GEOGRAPHY
-            description: ""
-
-      - name: stations
+      - name: bikeshare_stations
         description: ""
         columns:
           - name: station_id
+            data_type: INT64
+            description: ""
+          - name: name
             data_type: STRING
             description: ""
-          - name: complex_id
+          - name: status
             data_type: STRING
             description: ""
-          - name: gtfs_stop_id
+          - name: address
             data_type: STRING
             description: ""
-          - name: division
+          - name: alternate_name
             data_type: STRING
             description: ""
-          - name: line
+          - name: city_asset_number
+            data_type: INT64
+            description: ""
+          - name: property_type
             data_type: STRING
             description: ""
-          - name: station_name
+          - name: number_of_docks
+            data_type: INT64
+            description: ""
+          - name: power_type
             data_type: STRING
             description: ""
-          - name: borough_name
-            data_type: STRING
+          - name: footprint_length
+            data_type: INT64
             description: ""
-          - name: daytime_routes
-            data_type: STRING
-            description: ""
-          - name: structure
-            data_type: STRING
-            description: ""
-          - name: north_direction_label
-            data_type: STRING
-            description: ""
-          - name: south_direction_label
-            data_type: STRING
-            description: ""
-          - name: station_lat
+          - name: footprint_width
             data_type: FLOAT64
             description: ""
-          - name: station_lon
-            data_type: FLOAT64
+          - name: notes
+            data_type: STRING
             description: ""
-          - name: station_geom
-            data_type: GEOGRAPHY
+          - name: council_district
+            data_type: INT64
+            description: ""
+          - name: modified_date
+            data_type: TIMESTAMP
             description: ""
 
-      - name: stop_times
+      - name: bikeshare_trips
         description: ""
         columns:
           - name: trip_id
             data_type: STRING
             description: ""
-          - name: arrival_time
+          - name: subscriber_type
             data_type: STRING
             description: ""
-          - name: departure_time
+          - name: bike_id
             data_type: STRING
             description: ""
-          - name: stop_id
+          - name: bike_type
             data_type: STRING
             description: ""
-          - name: stop_sequence
+          - name: start_time
+            data_type: TIMESTAMP
+            description: ""
+          - name: start_station_id
+            data_type: INT64
+            description: ""
+          - name: start_station_name
             data_type: STRING
             description: ""
-          - name: stop_headsign
+          - name: end_station_id
             data_type: STRING
             description: ""
-          - name: pickup_type
+          - name: end_station_name
             data_type: STRING
             description: ""
-          - name: dropoff_type
-            data_type: STRING
-            description: ""
-          - name: shape_dist_traveled
-            data_type: STRING
-            description: ""
-
-      - name: trips
-        description: ""
-        columns:
-          - name: route_id
-            data_type: STRING
-            description: ""
-          - name: service_id
-            data_type: STRING
-            description: ""
-          - name: trip_id
-            data_type: STRING
-            description: ""
-          - name: trip_headsign
-            data_type: STRING
-            description: ""
-          - name: direction_id
-            data_type: STRING
-            description: ""
-          - name: block_id
-            data_type: STRING
-            description: ""
-          - name: shape_id
-            data_type: STRING
+          - name: duration_minutes
+            data_type: INT64
             description: ""
