@@ -1,0 +1,34 @@
+semantic_models:
+  - name: end_stations
+    description: SCD Type II table of tiers for salespeople 
+    model: ref('bikeshare_stations')
+    defaults:
+      agg_time_dimension: modified_date
+
+    dimensions:
+      - name: end_station_name
+        type: categorical
+        expr: name
+      - name: end_station_status
+        type: categorical
+        expr: status
+      - name: end_station_address
+        type: categorical
+        expr: address
+      - name: end_station_power_type
+        type: categorical
+        expr: power_type
+      - name: end_station_number_of_docks_dim
+        type: categorical
+        expr: number_of_docks
+
+    measures:
+      - name: number_of_docks
+        description: No of slots for bikes at the station
+        agg: sum
+
+    entities:
+      - name: end_station_id
+        type: primary 
+        expr: station_id
+        
