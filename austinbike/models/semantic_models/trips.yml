@@ -1,0 +1,59 @@
+semantic_models:
+  #The name of the semantic model.
+  - name: trips
+    defaults:
+      agg_time_dimension: start_time
+    description: |
+      Trips fact table. This table is at the trip grain with one row per trip. 
+    #The name of the dbt model and schema
+    model: ref('bikeshare_trips')
+    #Entities. These usually corespond to keys in the table.
+    entities:
+      - name: trip_id
+        type: primary
+      - name: bike_id
+        type: foreign
+      - name: start_station
+        type: foreign
+        expr: start_station_id
+      - name: end_station
+        type: foreign
+        expr: end_station_id
+
+    #Measures. These are the aggregations on the columns in the table. 
+    #Actually not, these are the scalar properties of the entity.
+    measures: 
+      - name: trip_duration
+        description: The duration for each trip.
+        agg: sum
+      - name: trip_count
+        expr: 1
+        agg: sum
+      - name: bike_count
+        description: Distinct count of bikes used in trips.
+        agg: count_distinct
+        expr: bike_id
+      - name: stations_where_trips_started
+        description: Distinct count of stations with a trip start
+        expr: start_station_id
+        agg: count_distinct
+      - name: stations_where_trips_ended
+        description: Distinct count of stations with a trip end
+        expr: end_station_id
+        agg: count_distinct
+
+    #Dimensions. Either categorical or time. These add additional context to metrics. The typical querying pattern is Metric by Dimension.  
+    dimensions:
+      - name: start_time
+        type: time
+        type_params:
+          time_granularity: day
+      - name: end_time
+        type: time
+        type_params:
+          time_granularity: day            
+      - name: trip_duration_dim
+        type: categorical
+        expr: trip_duration
+      - name: subscriber_type
+        type: categorical
